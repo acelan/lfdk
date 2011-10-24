@@ -20,7 +20,7 @@ LIBS				=	libmem.c libpci.c libio.c
 
 
 all:
-	$(CC) $(CFLAGS) $(LDFLAGS) -o $(OBJS) $(OBJS).c $(LIBS)
+	$(CC) $(CFLAGS) $(LDFLAGS) -o $(OBJS) $(OBJS).c $(LIBS) -lncurses -lpanel
 	$(STRIP) $(OBJS)
 
 clean:
