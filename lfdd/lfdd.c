@@ -93,7 +93,7 @@ static int lfdd_release( struct inode *inode, struct file *file ) {
 }
 
 
-static int lfdd_ioctl( struct file *file
+static long lfdd_ioctl( struct file *file
                             , unsigned int cmd, unsigned long arg ) {
 
     struct lfdd_pci_t lfdd_pci_data;

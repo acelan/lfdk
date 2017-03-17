@@ -46,7 +46,7 @@ extern char enter_mem;
 unsigned int phyaddr = 0;
 
 
-void WriteMemByteValue( fd ) {
+void WriteMemByteValue( int fd ) {
 
 
     lfdd_mem_data.addr = phyaddr + x * 16 + y;

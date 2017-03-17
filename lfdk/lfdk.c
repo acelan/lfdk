@@ -30,7 +30,9 @@
 
 #include "../lfdd/lfdd.h"
 #include "lfdk.h"
-
+#include "libpci.h"
+#include "libmem.h"
+#include "libio.h"
 
 static const char *progname;
 static BasePanel BaseScreen;

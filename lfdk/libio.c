@@ -46,7 +46,7 @@ extern char enter_mem;
 unsigned int ioaddr = 0;
 
 
-void WriteIOByteValue( fd ) {
+void WriteIOByteValue( int fd ) {
 
 
     lfdd_io_data.addr = ioaddr + x * 16 + y;
