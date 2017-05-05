@@ -184,7 +184,7 @@ void lfdd_mem_read_256byte( struct lfdd_mem_t *pmem ) {
 
     // Check the range of physical address
     if( ((0xffffffff - pmem->addr) <= LFDD_MASSBUF_SIZE) 
-        || ((pmem->addr + LFDD_MASSBUF_SIZE) >= virt_to_phys( high_memory )) ) {
+        || ((pmem->addr + LFDD_MASSBUF_SIZE) >= (unsigned int)virt_to_phys( high_memory )) ) {
 
         virtmem = ioremap( pmem->addr, LFDD_MASSBUF_SIZE );
 
