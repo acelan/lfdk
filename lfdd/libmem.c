@@ -43,7 +43,7 @@ unsigned char lfdd_mem_read_byte( unsigned int addr ) {
 
     // Check the range of physical address
     if( ((0xffffffff - addr) <= LFDD_MASSBUF_SIZE) 
-        || ((addr + LFDD_MASSBUF_SIZE) >= virt_to_phys( high_memory )) ) {
+        || ((addr + LFDD_MASSBUF_SIZE) >= (unsigned int)virt_to_phys( high_memory )) ) {
 
         return 0xff;
     }
@@ -64,7 +64,7 @@ unsigned short int lfdd_mem_read_word( unsigned int addr ) {
 
     // Check the range of physical address
     if( ((0xffffffff - addr) <= LFDD_MASSBUF_SIZE) 
-        || ((addr + LFDD_MASSBUF_SIZE) >= virt_to_phys( high_memory )) ) {
+        || ((addr + LFDD_MASSBUF_SIZE) >= (unsigned int)virt_to_phys( high_memory )) ) {
 
         return 0xff;
     }
@@ -85,7 +85,7 @@ unsigned int lfdd_mem_read_dword( unsigned int addr ) {
 
     // Check the range of physical address
     if( ((0xffffffff - addr) <= LFDD_MASSBUF_SIZE) 
-        || ((addr + LFDD_MASSBUF_SIZE) >= virt_to_phys( high_memory )) ) {
+        || ((addr + LFDD_MASSBUF_SIZE) >= (unsigned int)virt_to_phys( high_memory )) ) {
 
         return 0xff;
     }
@@ -107,7 +107,7 @@ void lfdd_mem_write_byte( unsigned int value, unsigned int addr ) {
 
     // Check the range of physical address
     if( ((0xffffffff - addr) <= LFDD_MASSBUF_SIZE) 
-        || ((addr + LFDD_MASSBUF_SIZE) >= virt_to_phys( high_memory )) ) {
+        || ((addr + LFDD_MASSBUF_SIZE) >= (unsigned int)virt_to_phys( high_memory )) ) {
 
         return;
     }
@@ -134,7 +134,7 @@ void lfdd_mem_write_word( unsigned int value, unsigned int addr ) {
 
     // Check the range of physical address
     if( ((0xffffffff - addr) <= LFDD_MASSBUF_SIZE) 
-        || ((addr + LFDD_MASSBUF_SIZE) >= virt_to_phys( high_memory )) ) {
+        || ((addr + LFDD_MASSBUF_SIZE) >= (unsigned int)virt_to_phys( high_memory )) ) {
 
         return;
     }
@@ -160,7 +160,7 @@ void lfdd_mem_write_dword( unsigned int value, unsigned int addr ) {
 
     // Check the range of physical address
     if( ((0xffffffff - addr) <= LFDD_MASSBUF_SIZE) 
-        || ((addr + LFDD_MASSBUF_SIZE) >= virt_to_phys( high_memory )) ) {
+        || ((addr + LFDD_MASSBUF_SIZE) >= (unsigned int)virt_to_phys( high_memory )) ) {
 
         return;
     }
