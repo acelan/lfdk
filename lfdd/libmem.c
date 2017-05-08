@@ -103,12 +103,19 @@ void lfdd_mem_write_byte( unsigned int value, unsigned int addr ) {
 
     unsigned long flags;
     unsigned char __iomem *phymem;
+    unsigned char __iomem *virtmem;
     unsigned int temp;
 
     // Check the range of physical address
     if( ((0xffffffff - addr) <= LFDD_MASSBUF_SIZE) 
         || ((addr + LFDD_MASSBUF_SIZE) >= (unsigned int)virt_to_phys( high_memory )) ) {
 
+        virtmem = ioremap( addr, 1);
+
+        if( virtmem ) {
+            iowrite8(value & 0xff, virtmem);
+            iounmap( virtmem );
+        }
         return;
     }
 
