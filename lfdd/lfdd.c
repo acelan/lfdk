@@ -21,6 +21,7 @@
 #include <linux/miscdevice.h>
 #include <linux/fcntl.h>
 #include <linux/proc_fs.h>
+#include <linux/uaccess.h>
 
 #include <linux/delay.h>
 
